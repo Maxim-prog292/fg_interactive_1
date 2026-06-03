@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Определи поддельную купюру</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app" aria-label="Игра Определи поддельную купюру">
+      <section class="brief">
+        <div class="brief-main">
+          <div class="seal" aria-hidden="true">1786</div>
+          <p id="legendText"></p>
+          <div class="scoreboard" aria-live="polite">
+            <span>Проверка</span>
+            <strong id="roundLabel">1 / 4</strong>
+            <div class="progress" id="progressDots"></div>
+          </div>
+        </div>
+        <div class="hint-list">
+          <span>Цвет бумаги</span>
+          <span>Водяной знак</span>
+          <span>Тиснение</span>
+          <span>Шелковые нити</span>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <section class="inspection">
+          <div class="banknote-stage" id="banknoteStage"></div>
+          <div class="magnifier" id="magnifier" aria-hidden="true">
+            <span id="magnifierText"></span>
+          </div>
+        </section>
+      </section>
+
+      <section class="bottom-controls" aria-label="Управление игрой">
+        <div class="inspect-controls" aria-label="Поворот экспоната">
+          <button class="rotate-btn" id="rotateLeftButton" title="Повернуть влево">‹</button>
+          <button class="hint-btn" id="hintButton">Подсказка</button>
+          <button class="rotate-btn" id="rotateRightButton" title="Повернуть вправо">›</button>
+        </div>
+        <div class="decision">
+          <button class="answer-btn authentic" data-answer="true">Подлинная</button>
+          <button class="answer-btn fake" data-answer="false">Поддельная</button>
+        </div>
+      </section>
+
+      <section class="result-panel" id="resultPanel" aria-live="assertive" hidden>
+        <div class="result-card">
+          <p class="result-eyebrow" id="resultEyebrow"></p>
+          <h2 id="resultTitle"></h2>
+          <p id="resultText"></p>
+          <button id="nextButton">Следующая купюра</button>
+        </div>
+      </section>
+
+      <section class="start-panel" id="startPanel" aria-live="polite">
+        <div class="start-content">
+          <p class="start-kicker">Тверская казенная палата</p>
+          <h2>Экспертиза ассигнаций</h2>
+          <p>
+            Осмотрите купюру с двух сторон, найдите признаки подлинности и вынесите заключение.
+          </p>
+          <button id="startButton">Начать игру</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
